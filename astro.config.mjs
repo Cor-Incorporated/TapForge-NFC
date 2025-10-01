@@ -1,7 +1,10 @@
 import { defineConfig } from 'astro/config'
 import tailwindcss from '@tailwindcss/vite'
+import cloudflare from '@astrojs/cloudflare'
 
 export default defineConfig({
+  output: 'server', // SSR mode for API routes
+  adapter: cloudflare(),
   vite: {
     plugins: [tailwindcss()]
   },

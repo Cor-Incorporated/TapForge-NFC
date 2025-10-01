@@ -66,15 +66,41 @@ const { title, pricing } = Astro.props
         </ul>
 
         <!-- CTA -->
-        <footer class="flex justify-between items-center gap-2">
+        <footer class="flex flex-col gap-4 @4xl:flex-row @4xl:justify-between @4xl:items-center">
 
           <!-- Price -->
-          <span class="text-4xl lg:text-5xl">£{ item.price }<span class="text-2xl hidden @md:inline-block -translate-y-1 ms-2"> / month</span></span>
+          {item.price ? (
+            <div class="flex flex-col">
+              <span class="text-4xl lg:text-5xl font-bold">
+                {item.price_suffix ? `${item.price}${item.price_suffix}` : item.price}
+              </span>
+              {item.price_note && (
+                <span class="text-sm text-gray-600 mt-2">{item.price_note}</span>
+              )}
+            </div>
+          ) : (
+            <div class="flex flex-col">
+              <span class="text-2xl font-bold">{item.price_note}</span>
+            </div>
+          )}
 
           <!-- CTA button -->
-          <button type="button" class="bs-btn inline-block self-start @4xl:mt-12 text-xl" onclick="demo.showModal()">
-            { item.cta }
-          </button>
+          {item.stripe_price_id ? (
+            <button
+              type="button"
+              class="bs-btn inline-block self-start @4xl:mt-0 text-xl checkout-btn"
+              data-price-id={item.stripe_price_id}
+            >
+              { item.cta }
+            </button>
+          ) : (
+            <a
+              href={item.contact_link || "mailto:info@tapforgenfc.jp"}
+              class="bs-btn inline-block self-start @4xl:mt-0 text-xl"
+            >
+              { item.cta }
+            </a>
+          )}
 
         </footer>
 
@@ -86,4 +112,54 @@ const { title, pricing } = Astro.props
   </div>
 
 </section>
+
+<script>
+  // Stripe Checkout integration
+  document.addEventListener('DOMContentLoaded', () => {
+    const checkoutButtons = document.querySelectorAll('.checkout-btn');
+    
+    checkoutButtons.forEach((button) => {
+      button.addEventListener('click', async () => {
+        const priceId = button.getAttribute('data-price-id');
+        
+        if (!priceId) {
+          console.error('No price ID found');
+          return;
+        }
+
+        try {
+          // Show loading state
+          button.textContent = '処理中...';
+          button.setAttribute('disabled', 'true');
+
+          // Call Stripe API
+          const response = await fetch('/api/create-checkout', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              priceId: priceId,
+              quantity: 1,
+            }),
+          });
+
+          const data = await response.json();
+
+          if (data.url) {
+            // Redirect to Stripe Checkout
+            window.location.href = data.url;
+          } else {
+            throw new Error('No checkout URL returned');
+          }
+        } catch (error) {
+          console.error('Checkout error:', error);
+          alert('注文処理中にエラーが発生しました。もう一度お試しください。');
+          button.textContent = button.getAttribute('data-original-text') || 'プランを選択して注文';
+          button.removeAttribute('disabled');
+        }
+      });
+    });
+  });
+</script>
 

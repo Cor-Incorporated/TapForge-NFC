@@ -1,52 +1,27 @@
 [
   {
-    "title": "Clamaane",
+    "title": "TapForge",
     "image": "/content-images/logo-01.svg",
-    "link": "https://www.blackspike.com/"
+    "link": "#"
   },
   {
-    "title": "Komplex",
+    "title": "NFC Tech",
     "image": "/content-images/logo-02.svg",
-    "link": "https://www.blackspike.com/"
+    "link": "#"
   },
   {
-    "title": "Splashed",
+    "title": "Card Print",
     "image": "/content-images/logo-03.svg",
-    "link": "https://www.blackspike.com/"
+    "link": "#"
   },
   {
-    "title": "HydroLab",
+    "title": "Event Pro",
     "image": "/content-images/logo-04.svg",
-    "link": "https://www.blackspike.com/"
+    "link": "#"
   },
   {
-    "title": "Aromaf",
+    "title": "Business Card",
     "image": "/content-images/logo-05.svg",
-    "link": "https://www.blackspike.com/"
-  },
-  {
-    "title": "Mediora",
-    "image": "/content-images/logo-06.svg",
-    "link": "https://www.blackspike.com/"
-  },
-  {
-    "title": "wellboth",
-    "image": "/content-images/logo-07.svg",
-    "link": "https://www.blackspike.com/"
-  },
-  {
-    "title": "humbbble",
-    "image": "/content-images/logo-08.svg",
-    "link": "https://www.blackspike.com/"
-  },
-  {
-    "title": "Interia",
-    "image": "/content-images/logo-09.svg",
-    "link": "https://www.blackspike.com/"
-  },
-  {
-    "title": "Anorch",
-    "image": "/content-images/logo-10.svg",
-    "link": "https://www.blackspike.com/"
+    "link": "#"
   }
 ]

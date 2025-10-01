@@ -1,0 +1,82 @@
+---
+// Stripe Checkout Session Creation API
+// SSR mode for API routes
+
+export const prerender = false;
+
+import type { APIRoute } from 'astro';
+import Stripe from 'stripe';
+
+// Initialize Stripe with secret key from environment variables
+// Development mode: Use dummy key if no real key is provided
+const stripeKey = import.meta.env.STRIPE_SECRET_KEY || 'sk_test_dummy_key_for_development';
+const stripe = new Stripe(stripeKey, {
+  apiVersion: '2024-12-18.acacia',
+});
+
+export const POST: APIRoute = async ({ request }) => {
+  try {
+    const body = await request.json();
+    const { priceId, quantity = 1 } = body;
+
+    if (!priceId) {
+      return new Response(
+        JSON.stringify({ error: 'priceId is required' }),
+        {
+          status: 400,
+          headers: { 'Content-Type': 'application/json' },
+        }
+      );
+    }
+
+    // Development mode: Return mock response
+    if (stripeKey.includes('dummy')) {
+      return new Response(
+        JSON.stringify({ 
+          error: 'Stripe APIキーが設定されていません。本番環境では.envファイルに実際のキーを設定してください。',
+          dev_mode: true 
+        }),
+        {
+          status: 400,
+          headers: { 'Content-Type': 'application/json' },
+        }
+      );
+    }
+
+    // Create Stripe Checkout Session
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ['card'],
+      line_items: [
+        {
+          price: priceId,
+          quantity: quantity,
+        },
+      ],
+      mode: 'payment',
+      success_url: `${new URL(request.url).origin}/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${new URL(request.url).origin}/#pricing`,
+      metadata: {
+        quantity: quantity.toString(),
+      },
+    });
+
+    return new Response(
+      JSON.stringify({ sessionId: session.id, url: session.url }),
+      {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+      }
+    );
+  } catch (error) {
+    console.error('Stripe Checkout Error:', error);
+    return new Response(
+      JSON.stringify({ error: 'Failed to create checkout session' }),
+      {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' },
+      }
+    );
+  }
+};
+---
+

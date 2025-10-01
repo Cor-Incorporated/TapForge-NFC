@@ -25,9 +25,9 @@ const { settings } = Astro.props
         <h2 class="bs-h3">{ settings.demo.title  }</h2>
 
         <!-- CTA Button -->
-        <button type="button" class="min-w-32 bs-btn block bg-bs-surface-3" onclick="demo.showModal()">
+        <a href="#pricing" class="min-w-32 bs-btn block bg-bs-surface-3 text-center">
           { settings.demo.cta }
-        </button>
+        </a>
 
       </div>
 
@@ -68,15 +68,9 @@ const { settings } = Astro.props
   <!-- Colophon -->
   <aside class="bs-container">
 
-      <nav class="flex gap-4 justify-center pt-16 md:pt-24 text-xs">
-
-        <!-- Copyright/Date -->
-        <a href="https://blackspike.com/">by blackspike.com</a>
-
-        <!-- Credits -->
-        <a href="/credits">about / credits</a>
-
-      </nav>
+      <div class="flex gap-4 justify-center pt-16 md:pt-24 text-xs text-gray-500">
+        <p>Copyright © 2025 あなたの名刺</p>
+      </div>
 
   </aside>
 

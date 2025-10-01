@@ -1,25 +1,21 @@
 {
-  "title": "blackspike astro landing page",
-  "description": "A free Astro landing theme made with Tailwind",
+  "title": "TapForge NFC | NFC名刺印刷 300円から",
+  "description": "スマホタッチで共有！オリジナルNFCカードを低価格で。送料別300円、即日書き込み。",
   "social_image": "/1200x630.jpg",
-  "base_url": "https://astro-theme.blackspike.com",
+  "base_url": "https://tapforgenfc.jp",
   "demo": {
-    "title": "Need design?",
-    "content": "<strong>Get a guided tour through our services</strong>, and find out how you and your team can change the way you work, forever.",
-    "cta": "Book a call"
+    "title": "300円で始める | 今すぐ注文",
+    "content": "<strong>NFCカード、フォントサイズ、\"価格\", \"FAQ\", \"お問い合わせ\"。</strong>",
+    "cta": "今すぐ注文"
   },
-  "theme_color": "#18181b",
+  "theme_color": "#1E40AF",
   "nav": [
     {
-      "title": "Services",
+      "title": "サービス",
       "link": "/#services"
     },
     {
-      "title": "Case studies",
-      "link": "/#case-studies"
-    },
-    {
-      "title": "Pricing",
+      "title": "価格",
       "link": "/#pricing"
     },
     {
@@ -27,31 +23,10 @@
       "link": "/#faq"
     },
     {
-      "title": "Newsletter",
-      "link": "/#newsletter"
+      "title": "お問い合わせ",
+      "link": "/#contact"
     }
   ],
 
-  "social_links": [
-    {
-      "title": "Twitter / X",
-      "link": "https://x.com/blackspikeltd/"
-    },
-    {
-      "title": "Mastodon",
-      "link": "https://mastodon.cloud/@blackspike"
-    },
-    {
-      "title": "GitHub",
-      "link": "https://github.com/blackspike/"
-    },
-    {
-      "title": "LinkedIn",
-      "link": "https://www.linkedin.com/company/blackspike"
-    },
-    {
-      "title": "Bluesky",
-      "link": "https://bsky.app/profile/blackspike.com/"
-    }
-  ]
+  "social_links": []
 }

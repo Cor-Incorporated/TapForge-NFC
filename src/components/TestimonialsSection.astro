@@ -21,8 +21,15 @@ const { title, testimonials } = Astro.props
         <!-- Text -->
         <p set:html={ item.quote } class:list={["text-sm lg:text-lg", item.quote.length > 100 ? "line-clamp-4 lg:line-clamp-none" : ""]} />
 
-        <!-- Cite -->
-        <cite class="not-italic text-bs-foreground-dark text-sm font-semibold">@{ item.handle }</cite>
+        <!-- Rating & Cite -->
+        <div class="flex flex-col gap-1">
+          {item.rating && (
+            <div class="text-yellow-500 text-lg">
+              {"★".repeat(item.rating)}{"☆".repeat(5 - item.rating)}
+            </div>
+          )}
+          <cite class="not-italic text-bs-foreground-dark text-sm font-semibold">@{ item.handle }</cite>
+        </div>
 
       </blockquote>
 

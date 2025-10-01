@@ -1,14 +1,14 @@
 {
-  "hero_title": "blackspike astro landing page",
-  "hero_content": "<p><strong>A free Astro landing theme made with Tailwind</strong> to help kick start your Astro website.</p><p>Uses modern CSS and HTML features for added zip, plus a slick swiper carousel. All in Astro JSX.</p>",
-  "services_title": "Our services",
-  "clients_title": "Trusted by some great companies",
-  "testimonials_title": "Clients ♥ us",
-  "case_studies_title": "Case studies",
-  "pricing_title": "We do design retainers",
-  "quote_content": "This <strong>design agency</strong> is a <strong>game changer</strong>. Its <strong>creative vision</strong>, <strong>user-focused approach</strong>, and <strong>seamless collaboration</strong> have <strong>transformed</strong> the way we <strong>build our brand</strong>. It’s <strong>not just an agency</strong> — it’s a <strong>powerful partner</strong> that <strong>delivers real results</strong>.",
-  "quote_cite": "Sean Higgins",
-  "quote_role": "CTO, Interia",
+  "hero_title": "TapForge NFC",
+  "hero_content": "<p><strong>スマホタッチで共有！オリジナルNFCカードを低価格で。</strong></p><p>送料別300円、即日書き込み。名刺サイズのカスタムNFCカード</p>",
+  "services_title": "スマホをかざすだけ！",
+  "clients_title": "",
+  "testimonials_title": "お客様の声",
+  "case_studies_title": "",
+  "pricing_title": "単品",
+  "quote_content": "参加者100名を超える「場づくりフォーラム共有」でTapForge NFCが、あなたのタッチを形にします。",
+  "quote_cite": "名刺の名刺はもうれしい？ TapForge",
+  "quote_role": "",
   "quote_image": "/content-images/quote-man.avif",
-  "faq_title": "Frequently Asked Questions"
+  "faq_title": "よくある質問"
 }

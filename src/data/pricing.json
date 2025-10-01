@@ -1,30 +1,47 @@
 [
   {
-    "title": "Basic plan",
-    "tag": "Most popular",
-    "content": "One designer, 5 days a month",
-    "cta": "Start free trial",
-    "price": 999,
+    "title": "10枚セット",
+    "tag": "単品",
+    "content": "印刷＋書き込み（各刷サイズ、白黒）",
+    "cta": "プランを選択して注文",
+    "price": "2,800",
+    "price_suffix": "円",
+    "price_note": "（定形郵便、送料75円、支払い: Stripe（カード3.6%））",
+    "stripe_price_id": "price_10set",
     "services": [
-      { "item": "Access to basic services" },
-      { "item": "Basic assets and logos" },
-      { "item": "Up to 10 individual assets" },
-      { "item": "Teams/slack chat" },
-      { "item": "Cancel Anytime" }
+      { "item": "送料: 全国一律110円（定形郵便）" },
+      { "item": "クリックポストオプション+75円、支払い: Stripe（カード3.6%）" }
     ]
   },
   {
-    "title": "Enterprise plan",
-    "tag": "Best value",
-    "content": "One team, 5 days a month",
-    "cta": "Enquire now",
-    "price": 2999,
+    "title": "50枚セット",
+    "tag": "人気",
+    "content": "印刷＋書き込み（各刷サイズ、白黒）、\"3-5日\"",
+    "cta": "プランを選択して注文",
+    "price": "13,500",
+    "price_suffix": "円",
+    "price_note": "（\"同上＋割引\", \"無料提供\", \"6-7日\"）",
+    "stripe_price_id": "price_50set",
     "services": [
-      { "item": "All basic plan services" },
-      { "item": "100 assets" },
-      { "item": "Advanced reporting and analytics" },
-      { "item": "Up to 30 individual renders" },
-      { "item": "120GB storage allowance" }
+      { "item": "送料: 全国一律110円（定形郵便）" },
+      { "item": "クリックポストオプション+75円、支払い: Stripe（カード3.6%）" }
+    ]
+  },
+  {
+    "title": "100枚セット以上",
+    "tag": "法人向け",
+    "content": "テーブルレスポンシブ（モバイルで整数表示）",
+    "cta": "法人お問い合わせ",
+    "price": "",
+    "price_suffix": "",
+    "price_note": "お見積もり",
+    "stripe_price_id": "",
+    "contact_link": "mailto:info@tapforgenfc.jp",
+    "services": [
+      { "item": "大量注文に対応" },
+      { "item": "カスタムデザイン対応" },
+      { "item": "専任サポート" },
+      { "item": "請求書払い対応" }
     ]
   }
 ]

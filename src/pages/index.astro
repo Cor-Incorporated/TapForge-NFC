@@ -1,4 +1,5 @@
 ---
+export const prerender = true;
 
 import Layout from "../layouts/Layout.astro"
 
@@ -6,10 +7,9 @@ import CaseStudiesSection from "../components/CaseStudiesSection.astro"
 import ClientsSection from "../components/ClientsSection.astro"
 import FaqSection from "../components/FaqSection.astro"
 import ServicesCarousel from "../components/ServicesCarousel.astro"
+import ServiceHighlights from "../components/ServiceHighlights.astro"
 import HeroSection from "../components/HeroSection.astro"
-import NewsletterSection from "../components/NewsletterSection.astro"
 import PricingSection from "../components/PricingSection.astro"
-import QuoteSection from "../components/QuoteSection.astro"
 import TestimonialsSection from "../components/TestimonialsSection.astro"
 
 import caseStudies from "../data/case_studies.json"
@@ -19,56 +19,70 @@ import services from "../data/services.json"
 import home from "../data/home.json"
 import pricing from "../data/pricing.json"
 import global_settings from "../data/global_settings.json"
-import newsletter from "../data/newsletter.json"
 import testimonials from "../data/testimonials.json"
 
 ---
 
 <Layout title={ global_settings.title }>
 
+  <!-- 1. Hero Section -->
   <HeroSection
     content={ home.hero_content }
     settings={ global_settings }
     title={ home.hero_title }
   />
 
+  <!-- 2. Visual Showcase (Services Carousel with Swiper) -->
   <ServicesCarousel
     services={ services }
     title={ home.services_title }
   />
 
+  <!-- 3. Service Highlights (3-column grid) -->
+  <ServiceHighlights />
+
+  <!-- 4. Trusted Clients -->
   <ClientsSection
     clients={ clients }
-    title={ home.clients_title }
+    title="導入実績"
   />
 
-  <QuoteSection
-    cite={ home.quote_cite }
-    content={ home.quote_content }
-    image={ home.quote_image }
-    role={ home.quote_role }
-  />
-
+  <!-- 5. Case Studies -->
   <CaseStudiesSection
     caseStudies={ caseStudies }
-    title={ home.case_studies_title }
+    title="ご利用事例"
   />
 
+  <!-- 6. Testimonials (仕様・メリット) -->
   <TestimonialsSection
     testimonials={ testimonials }
     title={ home.testimonials_title }
   />
 
+  <!-- 7. Pricing Section -->
   <PricingSection
     pricing={ pricing }
     title={ home.pricing_title }
   />
 
+  <!-- 8. FAQ Section -->
   <FaqSection
     faq={ faq }
     title={ home.faq_title }
   />
 
-  <NewsletterSection newsletter={newsletter} />
+  <!-- 9. CTA Section -->
+  <section id="contact" class="bg-[#1E40AF] py-32 mt-20 text-center text-white">
+    <div class="bs-container">
+      <h2 class="mb-4 text-4xl font-bold">300円で始める｜今すぐ注文</h2>
+      <p class="mb-8 text-xl">連絡先: <a href="mailto:info@tapforgenfc.jp" class="underline">info@tapforgenfc.jp</a></p>
+      <a
+        href="#pricing"
+        class="inline-block rounded-lg bg-green-500 px-8 py-4 text-lg font-bold text-white transition-all hover:bg-green-600 hover:shadow-lg"
+      >
+        今すぐ注文する
+      </a>
+    </div>
+  </section>
 
 </Layout>

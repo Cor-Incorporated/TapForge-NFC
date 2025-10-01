@@ -1,35 +1,47 @@
 ---
 
-import Image from "astro/components/Image.astro"
-import hero_screens from "../assets/theme-images/hero-screens.png"
-
 const { settings, title, content } = Astro.props
 
 ---
 
-<section class="bs-container py-6 flex flex-col lg:flex-row items-center">
-
-  <!-- Content -->
-  <div class="flex flex-col gap-6 lg:max-w-lg w-full py-16">
-
-    <!-- Title -->
-    <h1 class="bs-h1" set:html={ title } />
-
-    <!-- Content -->
-    <div class="bs-body-text xl:text-xl flex flex-col gap-4 [&_p]:last:text-bs-foreground-dark" set:html={ content } />
-
-    <!-- CTA -->
-    <button type="button" class="bs-btn self-start bs-mt-sm" onclick="demo.showModal()">
-      { settings.demo.cta }
-    </button>
-
+<section class="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#1E40AF]">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"1\"%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
   </div>
 
-  <!-- Image -->
-  <figure class="flex place-content-center -mt-20 lg:mt-0">
+  <div class="bs-container relative z-10 text-center">
+    <!-- Logo/Title -->
+    <div class="mb-8">
+      <h1 class="text-4xl font-bold text-white md:text-5xl lg:text-6xl" set:html={title} />
+    </div>
 
-    <Image src={ hero_screens } format="avif" quality="high" alt="Screens showing phone, tablet and desktop views of our website" loading="eager" />
+    <!-- Content -->
+    <div class="mx-auto mb-12 max-w-3xl text-xl text-white/90 md:text-2xl [&_p]:mb-4" set:html={content} />
 
-  </figure>
+    <!-- CTA Buttons -->
+    <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+      <a
+        href="#pricing"
+        class="rounded-lg bg-green-500 px-8 py-4 text-lg font-bold text-white transition-all hover:bg-green-600 hover:shadow-lg"
+      >
+        今すぐ注文する
+      </a>
+      <a
+        href="#services"
+        class="rounded-lg border-2 border-white bg-transparent px-8 py-4 text-lg font-bold text-white transition-all hover:bg-white hover:text-[#1E40AF]"
+      >
+        サービス詳細
+      </a>
+    </div>
 
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <a href="#services" class="text-white opacity-75 hover:opacity-100">
+        <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
 </section>

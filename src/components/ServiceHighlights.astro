@@ -1,0 +1,69 @@
+---
+// Service Highlights Section - 3 Column Grid
+
+const highlights = [
+  {
+    icon: "💰",
+    title: "送料別300円から",
+    description: "NFC名刺を300円からスタート。少ないロット数から注文可能で、事業規模を問いません。",
+    features: [
+      "送料別300円で即日書き込み",
+      "\"送料別で即日書き込み\"を実現",
+      "名刺サイズで多彩なデザイン対応"
+    ]
+  },
+  {
+    icon: "⚡",
+    title: "即日書き込み対応",
+    description: "個人・イベント向けに小ロット印刷。TapForge NFCが、あなたのタッチを形にします。",
+    features: [
+      "クリック対応セッションへスムーズ遷移",
+      "URL・SNSを即日反映",
+      "個人・イベント・小ロット即応対応"
+    ]
+  },
+  {
+    icon: "📱",
+    title: "アプリ不要、iPhone/Android対応",
+    description: "専用アプリは不要。iPhone XS以降、Android NFC搭載機で、アプリ不要で書き込みを300円（送料別）で提供します。",
+    features: [
+      "ビジネス名刺：プロフィール共有をタップ一つ",
+      "イベントバッジ: 参加者間即時接続",
+      "ギフトカード: メッセージを非接触で"
+    ]
+  }
+];
+---
+
+<section id="service-highlights" class="bg-blue-50 py-20" style="margin-top: 200px;">
+  <div class="bs-container">
+    <h2 class="bs-h2 text-center mb-4 text-[#1E40AF]">TapForge NFCの未来を共有</h2>
+    <p class="text-center text-xl text-gray-700 mb-16 max-w-4xl mx-auto">
+      名刺サイズのカードにURL/SNS/連絡先を書き込み、iPhone/Android対応でアプリ不要、印刷＋書き込みを300円（送料別）で提供します。
+    </p>
+
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {highlights.map((highlight) => (
+        <div class="group rounded-2xl bg-white p-8 shadow-lg transition-all hover:shadow-2xl">
+          <div class="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 text-3xl">
+            {highlight.icon}
+          </div>
+          <h3 class="mb-4 text-2xl font-bold text-gray-800">{highlight.title}</h3>
+          <p class="mb-4 text-gray-600">{highlight.description}</p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            {highlight.features.map((feature) => (
+              <li class="flex items-start">
+                <svg class="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+

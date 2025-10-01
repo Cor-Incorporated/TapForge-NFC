@@ -1,83 +1,136 @@
-# blackspike astro landing page
+# TapForge NFC - ランディングページ
 
-[<img src="public/theme-preview/github-preview.jpg" alt="screens showing theme parts on iPads" style="max-width: 100%; height: auto; width: 100%;" width="1600">](public/theme-preview/github-preview.jpg)
+TapForge NFC カード印刷サービスのランディングページ
 
-## A free, modern, [Astro](https://astro.build/) landing page theme made with [Tailwind](https://tailwindcss.com/) to help kick start your next Astro project
+## 概要
 
-We built this page as the first version of our own website, [blackspike.com](https://www.blackspike.com), but switched to a different design later.
+送料別 300 円から NFC 名刺を提供するサービスのランディングページです。Blackspike Astro LP テンプレートをベースに構築されています。
 
-Rather than let it gather dust, we decided to modernise it, try out some fresh new CSS features and give it back to the Astro community.
+## 技術スタック
 
-You can read more about how we built it and the cool new tech we used [on our blog post](https://www.blackspike.com/blog/blackspike-free-astro-tailwind-theme/).
+- **Astro 5.x** - 静的サイトジェネレーター（ハイブリッドモード）
+- **Tailwind CSS 4.x** - スタイリング
+- **Swiper 11.x** - カルーセル
+- **Stripe** - 決済統合
+- **Cloudflare Pages** - デプロイ先
 
-Now available as an official Astro theme! [Download it from the Astro themes page](https://astro.build/themes/details/blackspike-astro-landing-page/)
+## セットアップ
 
-## Live demo https://astro-theme.blackspike.com
+### 依存関係のインストール
 
-We hope you find it useful!
+```bash
+npm install
+```
 
-## License
+### 環境変数の設定
 
-Theme and 3D images are licensed under a [Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/).
+プロジェクトルートに `.env` ファイルを作成し、以下の環境変数を設定してください：
 
-Created by blackspike [blackspike design](https://www.blackspike.com) – a web design & development team specialising in Astro, Vue, Nuxt & Wordpress websites
+```env
+# Stripe API Keys
+PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_...
+STRIPE_SECRET_KEY=sk_test_...
+```
 
-## Astro 5 Features
+### 開発サーバーの起動
 
-- [Image component](https://docs.astro.build/en/guides/images/#display-optimized-images-with-the-image--component) for optimised AVIF images
-- All-[JSX](https://docs.astro.build/en/reference/astro-syntax/) native astro components
-- SVGs imported as [SVG components](https://docs.astro.build/en/guides/images/#svg-components)
-- JSON-powered content (easy to edit UI text or hook up a CMS!)
-- Experimental [Fonts API](https://docs.astro.build/en/reference/experimental-flags/fonts/)
+```bash
+npm run dev
+```
 
-## CSS & HTML Features
+ブラウザで `http://localhost:4321` を開いてください。
 
-- [Tailwind 4](https://tailwindcss.com/blog/tailwindcss-v4)
-- HTML modal dialog
-- JS-free scroll-linked animations
-- JS-free exclusive accordions with details/summary (animated!)
-- Container queries
-- Linear easing for bouncing / springing
-- Text wrap pretty / balance
+### ビルド
 
-## JS Features
+```bash
+npm run build
+```
 
-- [swiper.js](https://swiperjs.com/) carousel
+## プロジェクト構造
 
-## Previews
+```
+/
+├── public/              # 静的ファイル
+├── src/
+│   ├── assets/         # 画像、フォント、CSS
+│   ├── components/     # Astroコンポーネント
+│   ├── data/          # JSONデータファイル
+│   ├── layouts/       # レイアウトコンポーネント
+│   └── pages/         # ページファイル
+│       ├── index.astro       # トップページ
+│       └── api/
+│           └── create-checkout.astro  # Stripe API
+├── astro.config.mjs   # Astro設定
+└── package.json
+```
 
-[<img src="public/theme-preview/blackspike-theme-1.jpg" alt="screenshot of dark theme landing page on desktop and on ipad browsers" style="max-width: 100%; height: auto; width: 100%;" width="1600">](public/theme-preview/blackspike-theme-1.jpg)
+## セクション構成
 
-[<img src="public/theme-preview/blackspike-theme-2.jpg" alt="screenshot of dark theme carousel slides with 3D backgrounds" style="max-width: 100%; height: auto; width: 100%;" width="1600">](public/theme-preview/blackspike-theme-2.jpg)
+1. **Hero** - 100vh、青色背景、メインメッセージ
+2. **Visual Showcase** - Swiper カルーセルでサービス紹介
+3. **仕様・メリット** - NFC カードの仕様を表示
+4. **Pricing** - 3 つの料金プラン（10 枚、50 枚、100 枚以上）
+5. **FAQ** - よくある質問（アコーディオン形式）
+6. **CTA** - 注文への誘導
 
-[<img src="public/theme-preview/blackspike-theme-4.jpg" alt="screens showing theme parts" style="max-width: 100%; height: auto; width: 100%;" width="1600">](public/theme-preview/blackspike-theme-4.jpg)
+## Stripe 統合
 
-[<img src="public/theme-preview/blackspike-theme-5.jpg" alt="dark theme pricing section on laptop and iPhone browsers" style="max-width: 100%; height: auto; width: 100%;" width="1600">](public/theme-preview/blackspike-theme-5.jpg)
+### Checkout セッションの作成
 
-[<img src="public/theme-preview/blackspike-theme-full.webp" alt="full page preview" style="max-width: 100%; height: auto; width: 100%;" width="1600">](public/theme-preview/blackspike-theme-full.webp)
+```javascript
+const response = await fetch("/api/create-checkout", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    priceId: "price_...", // Stripe Price ID
+    quantity: 1,
+  }),
+});
 
-## Credits
+const { url } = await response.json();
+window.location.href = url; // Stripe Checkoutへリダイレクト
+```
 
-- Fake logos by [uicontent.co](https://uicontent.co/svg-dummy-logo/)
-- Quote avatar person by [thispersondoesnotexist.com](https://thispersondoesnotexist.com/)
-- Misc icons and logo from [icones.js.org](https://icones.js.org/) by [@antfu](https://github.com/antfu)
-- Carousel powered by [swiperjs.com](https://swiperjs.com/)
-- Inter font by [rsms.me](https://rsms.me/inter/)
+## デプロイ
 
-## Tags
+### Cloudflare Pages へのデプロイ
 
-#tailwind #tailwind4 #astro #landingPage #css #html #swiper #dark #theme
+1. Cloudflare Pages プロジェクトを作成
+2. GitHub リポジトリと連携
+3. ビルド設定：
+   - **Build command**: `npm run build`
+   - **Output directory**: `dist`
+4. 環境変数を設定：
+   - `STRIPE_SECRET_KEY`
+   - `PUBLIC_STRIPE_PUBLISHABLE_KEY`
 
-## Commands
+## カスタマイズ
 
-All commands are run from the root of the project, from a terminal:
+### データの更新
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+`src/data/` フォルダ内の JSON ファイルを編集してコンテンツを変更できます：
 
+- `global_settings.json` - サイト全体の設定
+- `home.json` - トップページのタイトルと説明
+- `services.json` - サービス紹介（3 つ）
+- `pricing.json` - 料金プラン
+- `faq.json` - よくある質問
+- `testimonials.json` - お客様の声
+
+### スタイルの変更
+
+- `src/assets/css/` - カスタム CSS
+- テーマカラー: `#1E40AF` (青) と `#10B981` (緑)
+
+## ライセンス
+
+MIT License
+
+## クレジット
+
+- Blackspike Astro LP Template
+- Astro
+- Tailwind CSS
+- Swiper

@@ -1,32 +1,32 @@
 [
   {
-    "title": "Powering Growth.<br>Simplifying Success.",
-    "sector": "Web design",
-    "content": "<strong>Our custom web design solution helped Biotechlet Ltd elevate its digital presence with a clean, modern interface and intuitive user experience. </strong> <br><br>The redesigned site streamlined user journeys, improved accessibility, and strengthened brand credibility.",
-    "case_study_link": "https://www.spike.news",
-    "cta": "Visit spike.news",
+    "title": "デザイン原稿アップロード（テンプレート提供）",
+    "sector": "印刷＋書き込み",
+    "content": "<strong>NFC名刺を300円からスタート。少ないロット数から注文可能で、事業規模を問いません。</strong> <br><br>送料別300円で即日書き込み、\"送料別で即日書き込み\"を実現、名刺サイズで多彩なデザイン対応。URL・SNSを即日反映、個人・イベント向け小ロット印刷。TapForge NFCが、あなたのタッチを形にします。",
+    "case_study_link": "#pricing",
+    "cta": "今すぐ注文",
     "image": "/content-images/spike.news.avif",
-    "image_alt": "iPad showing spike.news website",
+    "image_alt": "NFCカードデザインテンプレート",
     "bg": "bg-gradient-to-r from-indigo-500 to-purple-600"
   },
   {
-    "title": "Accelerating Innovation.<br>Empowering Results.",
-    "sector": "Development",
-    "content": "Our dynamic design and build simplified productivity, delivering automated solutions, seamless collaboration, and data-driven insights",
-    "case_study_link": "https://pixelate.pictures",
-    "cta": "Visit pixelate.pictures",
+    "title": "Stripeチェックアウトへリダイレクト",
+    "sector": "決済・URL/SNS連携",
+    "content": "<strong>支払い（PayPay/クレカ対応）、Blackspike?link（e.g., spike.news）を無効化。</strong> <br><br>確認メール＋書き込み後発送、通過審査等通知、5-2日をgrid:に追加。",
+    "case_study_link": "#pricing",
+    "cta": "Stripeチェックアウトへリダイレク",
     "image": "/content-images/pixelate.pictures.avif",
-    "image_alt": "iPad showing pixelated wave painting",
+    "image_alt": "Stripe決済画面",
     "bg": "bg-gradient-to-r from-fuchsia-500 to-cyan-500"
   },
   {
-    "title": "Enhance productivity,<br>boost efficiency.",
-    "sector": "3D Design",
-    "content": "Create, collaborate, and render — all in one streamlined workflow. Teams are connected and producing stunning visuals in minutes.",
-    "case_study_link": "https://www.brighton.dog",
-    "cta": "Visit brighton.dog",
+    "title": "イベント向けカスタム小ロット印刷",
+    "sector": "ビジネス・イベント",
+    "content": "<strong>個人・小ロット向けに即応対応、即日反映で参加者間即時接続を実現。</strong> <br><br>100枚以上の法人向け大量注文にも対応、カスタムデザイン・専任サポート・請求書払いも可能。",
+    "case_study_link": "mailto:info@tapforgenfc.jp",
+    "cta": "法人お問い合わせ",
     "image": "/content-images/brighton.dog.avif",
-    "image_alt": "iPad showing the web page of brighton.dog",
+    "image_alt": "イベントバッジNFCカード",
     "bg": "bg-gradient-to-r from-pink-500 to-yellow-500"
   }
 ]
