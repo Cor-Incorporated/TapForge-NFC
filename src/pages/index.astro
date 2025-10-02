@@ -41,16 +41,16 @@ import testimonials from "../data/testimonials.json"
   <!-- 3. Service Highlights (3-column grid) -->
   <ServiceHighlights />
 
-  <!-- 4. Trusted Clients -->
+  <!-- 4. Design Examples -->
   <ClientsSection
     clients={ clients }
-    title="導入実績"
+    title="デザイン例"
   />
 
   <!-- 5. Case Studies -->
   <CaseStudiesSection
     caseStudies={ caseStudies }
-    title="ご利用事例"
+    title="3つの特徴"
   />
 
   <!-- 6. Testimonials (仕様・メリット) -->
@@ -74,14 +74,24 @@ import testimonials from "../data/testimonials.json"
   <!-- 9. CTA Section -->
   <section id="contact" class="bg-[#1E40AF] py-32 mt-20 text-center text-white">
     <div class="bs-container">
-      <h2 class="mb-4 text-4xl font-bold">300円で始める｜今すぐ注文</h2>
-      <p class="mb-8 text-xl">連絡先: <a href="mailto:info@tapforgenfc.jp" class="underline">info@tapforgenfc.jp</a></p>
-      <a
-        href="#pricing"
-        class="inline-block rounded-lg bg-green-500 px-8 py-4 text-lg font-bold text-white transition-all hover:bg-green-600 hover:shadow-lg"
-      >
-        今すぐ注文する
-      </a>
+      <h2 class="mb-4 text-4xl font-bold">あなたのデザインをNFCカードに</h2>
+      <p class="mb-8 text-xl">1枚300円から。高品質フルカラー印刷でお届けします。</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+        <a
+          href="#pricing"
+          class="inline-block rounded-lg bg-green-500 px-8 py-4 text-lg font-bold text-white transition-all hover:bg-green-600 hover:shadow-lg"
+        >
+          今すぐ注文する
+        </a>
+        <a
+          href="https://cor-jp.com/contact/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block rounded-lg border-2 border-white bg-transparent px-8 py-4 text-lg font-bold text-white transition-all hover:bg-white hover:text-[#1E40AF]"
+        >
+          お問い合わせ
+        </a>
+      </div>
     </div>
   </section>
 

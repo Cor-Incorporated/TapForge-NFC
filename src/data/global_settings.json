@@ -1,11 +1,11 @@
 {
-  "title": "TapForge NFC | NFC名刺印刷 300円から",
-  "description": "スマホタッチで共有！オリジナルNFCカードを低価格で。送料別300円、即日書き込み。",
+  "title": "TapForge NFC | NFCカード印刷 300円から",
+  "description": "あなたのデザインをNFCカードに。1枚300円から印刷できる高品質NFCカード印刷サービス。",
   "social_image": "/1200x630.jpg",
   "base_url": "https://tapforgenfc.jp",
   "demo": {
-    "title": "300円で始める | 今すぐ注文",
-    "content": "<strong>NFCカード、フォントサイズ、\"価格\", \"FAQ\", \"お問い合わせ\"。</strong>",
+    "title": "今すぐ注文",
+    "content": "<strong>1枚300円からオリジナルNFCカードを印刷</strong>",
     "cta": "今すぐ注文"
   },
   "theme_color": "#1E40AF",
