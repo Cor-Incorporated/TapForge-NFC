@@ -1,47 +1,53 @@
 [
   {
-    "title": "10枚セット",
-    "tag": "単品",
-    "content": "印刷＋書き込み（各刷サイズ、白黒）",
-    "cta": "プランを選択して注文",
-    "price": "2,800",
-    "price_suffix": "円",
-    "price_note": "（定形郵便、送料75円、支払い: Stripe（カード3.6%））",
-    "stripe_price_id": "price_10set",
+    "title": "片面印刷",
+    "tag": "基本プラン",
+    "content": "デザインデータからNFCカードに印刷します",
+    "cta": "注文する",
+    "price": "300",
+    "price_suffix": "円/枚",
+    "price_note": "（税込・別途送料）",
+    "stripe_price_id": "price_single_side",
     "services": [
-      { "item": "送料: 全国一律110円（定形郵便）" },
-      { "item": "クリックポストオプション+75円、支払い: Stripe（カード3.6%）" }
+      { "item": "ベースカラー: 白または黒" },
+      { "item": "名刺サイズ（85.5mm × 54mm）" },
+      { "item": "高品質フルカラー印刷" },
+      { "item": "NFCチップ内蔵" },
+      { "item": "データ書き込みはお客様自身で行っていただきます" }
     ]
   },
   {
-    "title": "50枚セット",
+    "title": "両面印刷",
     "tag": "人気",
-    "content": "印刷＋書き込み（各刷サイズ、白黒）、\"3-5日\"",
-    "cta": "プランを選択して注文",
-    "price": "13,500",
-    "price_suffix": "円",
-    "price_note": "（\"同上＋割引\", \"無料提供\", \"6-7日\"）",
-    "stripe_price_id": "price_50set",
+    "content": "表裏両面に印刷できます",
+    "cta": "注文する",
+    "price": "350",
+    "price_suffix": "円/枚",
+    "price_note": "（税込・別途送料）",
+    "stripe_price_id": "price_double_side",
     "services": [
-      { "item": "送料: 全国一律110円（定形郵便）" },
-      { "item": "クリックポストオプション+75円、支払い: Stripe（カード3.6%）" }
+      { "item": "ベースカラー: 白または黒" },
+      { "item": "名刺サイズ（85.5mm × 54mm）" },
+      { "item": "表裏両面フルカラー印刷" },
+      { "item": "NFCチップ内蔵" },
+      { "item": "データ書き込みはお客様自身で行っていただきます" }
     ]
   },
   {
-    "title": "100枚セット以上",
-    "tag": "法人向け",
-    "content": "テーブルレスポンシブ（モバイルで整数表示）",
-    "cta": "法人お問い合わせ",
+    "title": "データ書き込み込み",
+    "tag": "フルサービス",
+    "content": "印刷とデータ書き込みをまとめて依頼",
+    "cta": "TapForgeで注文",
     "price": "",
     "price_suffix": "",
-    "price_note": "お見積もり",
+    "price_note": "別サービス",
     "stripe_price_id": "",
-    "contact_link": "mailto:info@tapforgenfc.jp",
+    "contact_link": "https://tapforge.pages.dev/",
     "services": [
-      { "item": "大量注文に対応" },
-      { "item": "カスタムデザイン対応" },
-      { "item": "専任サポート" },
-      { "item": "請求書払い対応" }
+      { "item": "印刷＋データ書き込みまで対応" },
+      { "item": "URL、vCard、SNSリンクなど" },
+      { "item": "到着後すぐに使える" },
+      { "item": "詳細はTapForgeサイトをご覧ください" }
     ]
   }
 ]
