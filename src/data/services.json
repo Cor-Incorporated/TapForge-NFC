@@ -1,22 +1,22 @@
 [
   {
-    "title": "送料別300円から",
-    "content": "<strong>NFC名刺を300円からスタート。</strong> 少ないロット数から注文可能で、事業規模を問いません。送料別300円で即日書き込み、\"送料別で即日書き込み\"を実現、名刺サイズで多彩なデザイン対応。",
+    "title": "1枚300円から",
+    "content": "<strong>オリジナルNFCカードを低価格で印刷。</strong> お持ちのデザインデータを名刺サイズのNFCカードに印刷いたします。ベースカラーは白と黒から選べ、片面300円、両面350円とリーズナブルな価格でご提供。",
     "cta": "今すぐ注文",
     "image": "/content-images/blackspike-wallpaper-01.avif",
     "image_alt": "NFCカード印刷サンプル"
   },
   {
-    "title": "即日書き込み対応",
-    "content": "<strong>個人・イベント向けに小ロット印刷。</strong> TapForge NFCが、あなたのタッチを形にします。クリック対応セッションへスムーズ遷移、URL・SNSを即日反映、個人・イベント・小ロット即応対応。",
+    "title": "高品質フルカラー印刷",
+    "content": "<strong>お客様のデザインを美しく印刷。</strong> 名刺サイズ（85.5mm × 54mm）のNFCカードに、お持ちのデザインデータを高品質フルカラーで印刷します。個人の名刺から、イベントバッジ、ショップカードまで幅広く対応。",
     "cta": "詳細を見る",
     "image": "/content-images/blackspike-wallpaper-02.avif",
-    "image_alt": "即日書き込みサービス"
+    "image_alt": "高品質印刷のNFCカード"
   },
   {
-    "title": "アプリ不要、iPhone/Android対応",
-    "content": "<strong>専用アプリは不要。</strong> iPhone XS以降、Android NFC搭載機で、アプリ不要で書き込みを300円（送料別）で提供します。ビジネス名刺、イベントバッジ、ギフトカードに最適。",
-    "cta": "対応機種を確認",
+    "title": "幅広い機種で利用可能",
+    "content": "<strong>NFCチップ内蔵で多用途に活躍。</strong> iPhoneは7以降の機種すべてがNFC対応です。また、2015年以降に発売されたAndroidのスマートフォンもほとんどがNFC対応です。<br><br>お手持ちの機種がNFC対応かどうか不明な場合は、スマートフォンのメーカー公式サイトで、ご利用機種の仕様を確認することで判断いただくことが可能です。<br><small>※NFC対応スマートフォンかを判断するための無料アプリもあります。</small>",
+    "cta": "今すぐ注文",
     "image": "/content-images/blackspike-wallpaper-03.avif",
     "image_alt": "スマホでNFCカードをタッチ"
   }

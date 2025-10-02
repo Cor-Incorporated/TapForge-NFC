@@ -14,14 +14,14 @@ const { title, pricing } = Astro.props
   { title && <h2 class="bs-h2 text-center">{ title }</h2>}
 
   <!-- pricing -->
-  <div class="mt-8 grid lg:grid-cols-2 gap-8 lg:gap-0">
+  <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
     <!-- Item -->
 
     { pricing.map( ( item, index ) =>
 
     <article
-      class:list={['@container p-6 xl:p-16 flex flex-col gap-6 h-full w-full rounded-xl overflow-hidden lg:scale-90 @xl:justify-end', index === 1 ? 'bg-white/90 text-black/90 lg:scale-none' : 'bg-bs-surface-0/90']}>
+      class:list={['@container p-6 flex flex-col gap-4 h-full w-full rounded-xl overflow-hidden', index === 1 ? 'bg-white/90 text-black/90 shadow-lg' : 'bg-bs-surface-0/90']}>
 
       <!-- Content -->
       <div class="relative">
@@ -95,7 +95,9 @@ const { title, pricing } = Astro.props
             </button>
           ) : (
             <a
-              href={item.contact_link || "mailto:info@tapforgenfc.jp"}
+              href={item.contact_link || "https://cor-jp.com/contact/"}
+              target="_blank"
+              rel="noopener noreferrer"
               class="bs-btn inline-block self-start @4xl:mt-0 text-xl"
             >
               { item.cta }
@@ -128,7 +130,8 @@ const { title, pricing } = Astro.props
         }
 
         try {
-          // Show loading state
+          // Store original text and show loading state
+          const originalText = button.textContent;
           button.textContent = '処理中...';
           button.setAttribute('disabled', 'true');
 
@@ -146,16 +149,21 @@ const { title, pricing } = Astro.props
 
           const data = await response.json();
 
+          if (data.error) {
+            throw new Error(data.error);
+          }
+
           if (data.url) {
             // Redirect to Stripe Checkout
             window.location.href = data.url;
           } else {
-            throw new Error('No checkout URL returned');
+            throw new Error('チェックアウトURLが取得できませんでした');
           }
         } catch (error) {
           console.error('Checkout error:', error);
-          alert('注文処理中にエラーが発生しました。もう一度お試しください。');
-          button.textContent = button.getAttribute('data-original-text') || 'プランを選択して注文';
+          const errorMessage = error instanceof Error ? error.message : '注文処理中にエラーが発生しました。もう一度お試しください。';
+          alert(errorMessage);
+          button.textContent = originalText;
           button.removeAttribute('disabled');
         }
       });

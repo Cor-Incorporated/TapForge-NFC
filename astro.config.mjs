@@ -5,6 +5,9 @@ import cloudflare from '@astrojs/cloudflare'
 export default defineConfig({
   output: 'server', // SSR mode for API routes
   adapter: cloudflare(),
+  image: {
+    service: 'compile', // Optimize images at build time for Cloudflare compatibility
+  },
   vite: {
     plugins: [tailwindcss()]
   },
